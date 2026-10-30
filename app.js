@@ -9,6 +9,11 @@ let todos = [
   { id: 4, task: 'submit assignment', completed: true },
 ];
 
+// GET All – Read
+app.get('/todos', (req, res) => {
+  res.status(200).json(todos);
+});
+
 // GET Single – Read
 app.get('/todos/:id', (req, res) => {
   const todo = todos.find((t) => t.id === parseInt(req.params.id));
